@@ -1,0 +1,51 @@
+###COMMANDS FOR DATABASE###
+
+View All -> show dbs
+
+New/Switch Database -> use <name of Database>
+
+Current Database -> db
+
+Delete Database -> db.dropDatabase()
+
+###COMMANDS FOR COLLECTIONS###
+
+See Collections -> show collections
+
+New collection -> db.createCollection('<Name of Collection>')
+
+Delete Collection -> db.<Name of Collection>.drop()
+
+###COMMANDS FOR ROWS###
+
+Show Rows in collection
+db.<name of collection>.find()
+db.<name of collection>.find().pretty()     //Shows in Prettified mode
+
+Insert One Row
+db.<Name of Collection>.insert({
+    'key': 'value',
+    'key': 'value',
+    'key': 'value'
+})
+
+Insert Many Rows
+db.<Name of Collection>.insertMany([{
+    'key': 'value',
+    'key': 'value',
+    'key': 'value'
+},
+{
+    'key': 'value',
+    'key': 'value',
+    'key': 'value'
+}])
+
+Search in Database
+db.<name of collection>.find({key:'value', key:'value'})
+db.<name of collection>.find({key:'value', key:'value'}).limit(n) //LIMIT_NUMBEROF_RESULTS
+db.<name of collection>.find({key:'value', key:'value'}).count() //DisplayNumberOfRows
+db.<name of collection>.find().sort({key: 1/-1}) //+1ForAscending-1ForDescending
+
+Find First Row matching object
+db.<name of collection>.findOne()
